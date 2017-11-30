@@ -23,6 +23,23 @@ function clearText(field){
 }
 </script>
 
+<script type="text/javascript">
+    // The ID of the extension we want to talk to.
+
+    function testAdBlocker() {
+        
+        var extId = "hojkahekngglbpbjabdalhabcgahlfaj"; // chrome app id
+        var port = chrome.runtime.connect(extId);
+        console.log("connected...");
+        port.postMessage("hi from webpage");
+
+        port.onMessage.addListener(function(msg) {
+          // See other examples for sample onMessage handlers.
+          console.log("web page received: ", msg);
+        });
+    };
+</script>
+
 </head>
 <body>
 
@@ -52,6 +69,7 @@ function clearText(field){
         <div id="tooplate_header">
             <div id="site_title">
                 <h1><a href="#">Corporate Template</a></h1>
+                <button id="testAdBlocker" onclick="testAdBlocker()">Test Me!</button>
             </div>
             <div id="header_right">
                 <div id="social_links">
