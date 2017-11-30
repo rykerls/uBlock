@@ -6,6 +6,7 @@
 
 /******************************************************************************/
 
+console.log("At least we're hooking in the right file.....");
 chrome.runtime.onConnectExternal.addListener(function(port) {
         console.log("PORT!", port);
 
