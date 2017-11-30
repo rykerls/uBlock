@@ -22,4 +22,4 @@ chrome.runtime.onConnectExternal.addListener(function(port) {
         console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         });
     });
-});
+})();
