@@ -27,6 +27,7 @@
 
 'use strict';
 
+
 /******************************************************************************/
 
 var messaging = vAPI.messaging,
@@ -177,6 +178,7 @@ var setCloudData = function(data, append) {
 
 self.cloud.onPush = getCloudData;
 self.cloud.onPull = setCloudData;
+
 
 /******************************************************************************/
 
