@@ -4,15 +4,16 @@
 
 chrome.runtime.onConnectExternal.addListener(function(port) {
         console.log("PORT!", port);
-        if (confirm("This webpage is requesting you add it to your adblocker's whitelist as part of Ublock Origin's responsible ad program. By clicking yes below, you will be taken to your whitelist settings to confirm these changes.")) {
-            window.open('whitelist.html', '_blank');
-        } else {
-            // Do nothing!
-        }
-        
         
         port.onMessage.addListener(function(msg) {
         // See other examples for sample onMessage handlers.
         console.log("msg received: ", msg);
+        var encoded = encodeURIComponent(msg);
+        console.log(encoded)
+        if (confirm("This webpage is requesting to be added to Ublock Origin's whitelist.\n\nUblock origin works with non-profits, open-source projects, and similar entities that follow best practices for online advertisement and respect your privacy.\n\nThe choice is ultimately yours. Click OK to be taken to the Ublock Origin's whitelist settings.")) {
+            window.open('whitelist.html?str=' + encoded , '_blank');
+        } else {
+            // Do nothing!
+        }
         });
     });

@@ -196,8 +196,16 @@ uDom('#whitelistRevert').on('click', revertChanges);
 document.getElementById('bodydom').onload = function() {
     var url_string = window.location.href;
     var url = new URL(url_string);
-
+    var params = url.searchParams.get('str');
     console.log(url);
+    var entry = decodeURIComponent(params);
+    console.log(entry);
+
+    var textarea = getTextareaNode();
+    var data = textarea.value;
+    console.log(data);
+    textarea.value = data.trim() + '\n' + entry + '\n';
+    whitelistChanged();
 };
 
 renderWhitelist();

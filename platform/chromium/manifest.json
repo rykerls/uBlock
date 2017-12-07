@@ -9,7 +9,7 @@
 			"38": "img/browsericons/icon38.png"
 		},
 		"default_popup": "popup.html",
-		"default_title": "uBlock Origin dev build"
+		"default_title": "uBlock Origin"
 	},
 	"commands": {
 		"launch-element-picker": {
@@ -62,7 +62,7 @@
 	"incognito": "split",
 	"manifest_version": 2,
 	"minimum_chrome_version": "38.0",
-	"name": "uBlock Origin dev build",
+	"name": "uBlock Origin",
 	"optional_permissions": [
 		"file:///*"
 	],
