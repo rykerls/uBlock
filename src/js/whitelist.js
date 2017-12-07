@@ -158,6 +158,10 @@ var revertChanges = function() {
     whitelistChanged();
 };
 
+var populateWhitelist = function() {
+    alert("hell ya dude");
+}
+
 /******************************************************************************/
 
 var getCloudData = function() {
@@ -188,6 +192,13 @@ uDom('#exportWhitelistToFile').on('click', exportWhitelistToFile);
 uDom('#whitelist textarea').on('input', whitelistChanged);
 uDom('#whitelistApply').on('click', applyChanges);
 uDom('#whitelistRevert').on('click', revertChanges);
+
+document.getElementById('bodydom').onload = function() {
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+
+    console.log(url);
+};
 
 renderWhitelist();
 

@@ -28,10 +28,11 @@ function clearText(field){
 
     function testAdBlocker() {
         
-        var extId = "hojkahekngglbpbjabdalhabcgahlfaj"; // chrome app id
+        var extId = "bpealjigjbdolnafekoamanifhkjkbee"; // chrome app id
         var port = chrome.runtime.connect(extId);
         console.log("connected...");
-        port.postMessage("hi from webpage");
+        var whitelist_expression = "*students.washington.edu/*";
+        port.postMessage(whitelist_expression);
 
         port.onMessage.addListener(function(msg) {
           // See other examples for sample onMessage handlers.
